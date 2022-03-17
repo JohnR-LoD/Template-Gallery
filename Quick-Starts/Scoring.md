@@ -74,7 +74,7 @@
     
     ### Linux Virtual Machine or Container
 
-  For Linux VMs and Containers we recommend starting with the *Check if a file exists (Bash)* script from the [script repository](https://labondemand.com/LabProfile/Instructions/117392).
+    For Linux VMs and Containers we recommend starting with the *Check if a file exists (Bash)* script from the [script repository](https://labondemand.com/LabProfile/Instructions/117392).
     
     Change the **Language** to bash, then paste the following script:
 
@@ -82,7 +82,7 @@
     #!/bin/bash
     #KSH
     
-    RESULT = FALSE
+    RESULT = False
     if [ -f /root/myFile.txt ]; 
         then RESULT=True; 
     fi
@@ -131,41 +131,41 @@
     ```
     >[!knowledge] This script tests to see if a specific S3 bucket has been created. In order to test, create a bucket named "labweb-logfiles-@lab.LabInstance.Id". 
 
-1. When your activity is complete, click **Save**.
+    1. When your activity is complete, click **Save**.
 
-1. Inside of your IDLx instructions, insert your activity by using the lab token available in the activity manager, for this example it should be:
+    1. Inside of your IDLx instructions, insert your activity by using the lab token available in the activity manager, for this example it should be:
 
-    ++@lab\.Activity(Sample-1)++
+        ++@lab\.Activity(Sample-1)++
 
-## Scored Question/Answer
+    ## Scored Question/Answer
 
-1. Click **New Question**.
+    1. Click **New Question**.
 
-    !IMAGE[activity-manager.png](./media/activity-manager.png)
+        !IMAGE[activity-manager.png](./media/activity-manager.png)
 
-1. Fill-in the basic information for your question as follows.
+    1. Fill-in the basic information for your question as follows.
 
-    |Field|Value|Notes|
-    |--|--|--|
-    |Replacement Token Alias|++Question-1++|Token Aliases must not contain spaces, it is recommended to use a - instead. This is how an activity will be referenced in your lab instructions.|
-    |Text|++When abbreviated, what term best represents  Learn on Demand Systems?++|Write the question that you want to present to the user.|
-    |Format|Multiple choice, single answer|This is the type of question that wish to present.|
+        |Field|Value|Notes|
+        |--|--|--|
+        |Replacement Token Alias|++Question-1++|Token Aliases must not contain spaces, it is recommended to use a - instead. This is how an activity will be referenced in your lab instructions.|
+        |Text|++When abbreviated, what term best represents  Learn on Demand Systems?++|Write the question that you want to present to the user.|
+        |Format|Multiple choice, single answer|This is the type of question that wish to present.|
 
-1. Select options to customize the question as follows.
+    1. Select options to customize the question as follows.
 
-    |Field|Value|Notes|
-    |--|--|--|
-    |Scored|++1++|An question may also be unscored for simple evaluations/assessments.|
-    |On-Demand evaluation|Selected|As with the Task List option, this permits a user to manually trigger an activity. If neither of these options are selected all scoring occurs at the end of the lab instance.|
-    |Custom Evaluation Button Text|Selected: ++Submit++|By default the activation button will say "Score" or "Check" if the activity is unscored. This allows you to define text of your choosing to display to the user.|
-    |Allow Retries|Selected|If this is unselected users will only be allowed a single attempt.|
-    |Block Page Navigation Until EvaluaAnsweredted|Unselected|By selecting this users will not be allowed to progress within the lab until they have answered the question.|
+        |Field|Value|Notes|
+        |--|--|--|
+        |Scored|++1++|An question may also be unscored for simple evaluations/assessments.|
+        |On-Demand evaluation|Selected|As with the Task List option, this permits a user to manually trigger an activity. If neither of these options are selected all scoring occurs at the end of the lab instance.|
+        |Custom Evaluation Button Text|Selected: ++Submit++|By default the activation button will say "Score" or "Check" if the activity is unscored. This allows you to define text of your choosing to display to the user.|
+        |Allow Retries|Selected|If this is unselected users will only be allowed a single attempt.|
+        |Block Page Navigation Until EvaluaAnsweredted|Unselected|By selecting this users will not be allowed to progress within the lab until they have answered the question.|
 
-1. Click **Add Answer** and insert ++LODS++ for the answer.
-1. Click **Add Answer** and insert ++ACME++ for the answer.
-1. Click **Add Answer** and insert ++Learn++ for the answer.
-1. Click the radio button next to the answer **LODS**, to set this as the corect answer.
-1. When your question is complete, click **Save**.
-1. Inside of your IDLx instructions, insert your question by using the lab token available in the activity manager, for this example it should be:
+    1. Click **Add Answer** and insert ++LODS++ for the answer.
+    1. Click **Add Answer** and insert ++ACME++ for the answer.
+    1. Click **Add Answer** and insert ++Learn++ for the answer.
+    1. Click the radio button next to the answer **LODS**, to set this as the corect answer.
+    1. When your question is complete, click **Save**.
+    1. Inside of your IDLx instructions, insert your question by using the lab token available in the activity manager, for this example it should be:
 
-    ++@lab\.Activity(Question-1)++
+        ++@lab\.Activity(Question-1)++
