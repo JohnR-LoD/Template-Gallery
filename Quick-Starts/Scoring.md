@@ -50,40 +50,47 @@
 
     ### Windows Virtual Machine
 
-    ```
-    $desktopTxt = Get-ChildItem -Path C:\Users\Student\Desktop\ -Filter "*.txt"
-    $result = $false
-    if ($desktopTxt -eq $null) {
-        $result = $false
-        "No text files exist on the desktop."
-    } else {
-        $result = $true
-        "At least one text file was found on the desktop."
-        $desktopTxt.Name
+    For Windows VMs we recommend starting with the *Check if a file exists (PowerShell)* script from the [script repository](https://labondemand.com/LabProfile/Instructions/117392).
+    
+    Be sure the **Language** is set to PowerShell, then paste the following script:
+    
+    ```PowerShell
+    # Activity: File Exists
+    # Goal: Verify that there is an text save file on the Desktop of user Admin named "myFile.txt"
+
+    try{
+        $fullFilePath = 'C:\Users\Admin\Desktop\myFile.txt';
+
+        $FileExists = Test-Path -Path $fullFilePath;
+
+        return $FileExists;
     }
-    $result
+    catch { return $false; }
     ```
-    >[!knowledge] This script tests for the existence of a text file on the desktop. To test, create a text file on the desktop and the result should be successful.
+    
+    >[!knowledge] This script tests for the existence of an test file on the Admin user's desktop. To test the script launch the lab and login as Admin on Win11-CL-01, then create a text file on the desktop named +++MyFile.txt+++. The result should be successful.
 
     ---
     
     ### Linux Virtual Machine or Container
 
+  For Linux VMs and Containers we recommend starting with the *Check if a file exists (Bash)* script from the [script repository](https://labondemand.com/LabProfile/Instructions/117392).
+    
     Change the **Language** to bash, then paste the following script:
 
-    ```
+    ```Bash
     #!/bin/bash
     #KSH
-
-    RESULT=False
-
-    if ( cat /etc/ssh/sshd_config |grep -i 'PermitRootLogin no' > /dev/null )
-    then
-        RESULT=True
+    
+    RESULT = FALSE
+    if [ -f /root/myFile.txt ]; 
+        then RESULT=True; 
     fi
+
     echo $RESULT
     ```
-    >[!knowledge] This script tests to see if the root user has the permissions to log in via ssh. To test the script, edit the /ect/ssh/sshd_config file and change the PermitRootLogin option to **no**.
+
+    >[!knowledge] This script tests to see if the root directory has a file named myFile.txt. To test the script, use the command touch /root/myFile.txt and .
 
     ---
 
